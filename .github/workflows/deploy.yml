@@ -18,7 +18,11 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            # Navigate to the web folder (adjust path if needed)
-            # This example assumes you want to sync files to Nginx default path
-            sudo apt-get update
+            # 1. Navigate to your specific repository folder
+            cd /home/ubuntu/automation-activity-1
+            
+            # 2. Pull the latest code changes from GitHub
+            git pull origin main
+            
+            # 3. Restart Nginx to apply the changes
             sudo systemctl restart nginx
