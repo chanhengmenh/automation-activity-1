@@ -26,3 +26,4 @@ jobs:
             
             # 3. Restart Nginx to apply the changes
             sudo systemctl restart nginx
+
